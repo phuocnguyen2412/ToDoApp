@@ -1,0 +1,61 @@
+.modal .modal-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.modal .modal-content input {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.modal .modal-content button {
+  padding: 8px;
+  width: 100%;
+}
+.modal .modal-content textarea {
+  padding: 8px;
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 10;
+  padding: 30px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 100rem;
+  color: white;
+  background-color: #eee;
+  padding: 5px;
+  transform: translate(50%, -50%);
+}
+
+.modal-main {
+  overscroll-behavior-y: contain;
+}/*# sourceMappingURL=modal.css.map */

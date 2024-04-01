@@ -1,0 +1,118 @@
+@import "./item.scss";
+@import "./modal.scss";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    padding: 40px 0;
+
+    overflow: hidden;
+    height: calc(100vh - 40px);
+}
+.body {
+    margin-bottom: 40px;
+}
+.l-3 {
+    padding: 0 12px;
+}
+.header {
+    .row {
+        justify-content: space-between;
+    }
+}
+.number {
+    display: inline-block;
+    padding: 4px 8px;
+
+    border-radius: 4px;
+    font-size: 20px;
+}
+.line {
+    height: 3px;
+    width: 100%;
+    margin: 20px 0;
+}
+.title-col {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 7px 13px;
+
+    justify-content: space-between;
+
+    color: #fff;
+    border-radius: 10px;
+}
+#todo {
+    .title-todo {
+        background-color: #00afdd;
+
+        #todo-number {
+            background-color: #00d0df;
+        }
+    }
+    .line {
+        background-color: #00afdd;
+    }
+    .todo-list {
+        height: calc(100vh - 40px);
+        overflow: auto;
+    }
+}
+#doing {
+    .title-doing {
+        background-color: #e6d57d;
+
+        #doing-number {
+            background-color: #ddbf00;
+        }
+    }
+    .line {
+        background-color: #e6d57d;
+    }
+    .doing-list {
+        height: calc(100vh - 40px);
+        overflow: auto;
+    }
+}
+#done {
+    .title-done {
+        background-color: #3cc057;
+
+        #done-number {
+            background-color: #69ce7e;
+        }
+    }
+    .line {
+        background-color: #45c761;
+    }
+    .done-list {
+        height: calc(100vh - 40px);
+        overflow: auto;
+    }
+}
+#block {
+    .title-block {
+        background-color: #e74b3c;
+
+        #block-number {
+            background-color: #e4200e;
+        }
+    }
+    .line {
+        background-color: #e74b3c;
+    }
+    .block-list {
+        height: calc(100vh - 40px);
+        overflow: auto;
+    }
+}
+button {
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    padding: 12px 6px;
+}
