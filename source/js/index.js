@@ -1,5 +1,5 @@
 import closeModal from "./CloseModal.js";
-import handleOpenNewTask from "./handleOpenNewTask.js";
+import handleAddNewTask from "./handleAddNewTask.js";
 import toast from "./toast.js";
 import Task from "./Task.js";
 import showTask from "./ShowTask.js";
@@ -34,18 +34,7 @@ else {
     );
 }
 
-$("#ButtonAddTask").addEventListener("click", function (e) {
-    e.preventDefault();
-    const task = new Task(
-        document.getElementById("InputCategory").value,
-        document.getElementById("InputTitle").value,
-        document.getElementById("InputDescription").value,
-        "todo"
-    );
-    postActivity(task);
-});
-
-$("#ButtonNewTask").addEventListener("click", handleOpenNewTask);
+$("#ButtonNewTask").addEventListener("click", handleAddNewTask);
 
 $("#ButtonLogout").addEventListener("click", function (e) {
     localStorage.removeItem("account");

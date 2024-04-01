@@ -8,16 +8,16 @@ const $ = document.querySelector.bind(document);
 
 export default async function showTask() {
     const activities = (await getActivities()) || [];
-    console.log(activities);
+
     const todo = activities.filter((activity) => activity.type === "todo");
     const doing = activities.filter((activity) => activity.type === "doing");
     const done = activities.filter((activity) => activity.type === "done");
     const block = activities.filter((activity) => activity.type === "block");
-    console.log(todo, doing, done);
 
     $("#todo-number").innerText = todo.length;
     $("#doing-number").innerText = doing.length;
     $("#done-number").innerText = done.length;
+    $("#block-number").innerText = block.length;
 
     $(".todo-list").innerHTML = todo
         .map((item) => {
@@ -116,8 +116,8 @@ export default async function showTask() {
         })
         .join("\n");
     $$(".fa-trash").forEach((item) => {
-        item.addEventListener("click", () => {
-            console.log(item.getAttribute("value"));
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
             deleteActivity(item.getAttribute("value"));
         });
     });

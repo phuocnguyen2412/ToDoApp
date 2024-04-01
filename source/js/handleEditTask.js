@@ -1,12 +1,13 @@
 import getActivityById from "./api/getActivityById.js";
 import editActivity from "./api/editActivity.js";
 import Task from "./Task.js";
+import checkInput from "./checkInput.js";
 
 export default async function handleDeleteTask(id) {
     const task = await getActivityById(id);
-    const main = document.getElementById("EditTask");
+    const EditTask = document.getElementById("EditTask");
 
-    if (main) {
+    if (EditTask) {
         const modal = document.createElement("div");
 
         modal.innerHTML = `
@@ -59,19 +60,19 @@ export default async function handleDeleteTask(id) {
                                 <div class="form-group">
                                     <label for="TODO">TODO</label>
                                     <input type="radio" id="TODO" name="status" value="todo" ${
-                                        task.status === "todo" ? "checked" : ""
+                                        task.type === "todo" ? "checked" : ""
                                     }>
                                 </div>
                                 <div class="form-group">
                                     <label for="DOING">DOING</label>
                                     <input type="radio" id="DOING" name="status" value="doing" ${
-                                        task.status === "doing" ? "checked" : ""
+                                        task.type === "doing" ? "checked" : ""
                                     }>
                                 </div>
                                 <div class="form-group">
                                     <label for="DONE">DONE</label>
                                     <input type="radio" id="DONE" name="status" value="done" ${
-                                        task.status === "done" ? "checked" : ""
+                                        task.type === "done" ? "checked" : ""
                                     }>
                                 </div>
                             </div>
@@ -83,27 +84,40 @@ export default async function handleDeleteTask(id) {
                 </div>
             </div>
         `;
-        main.appendChild(modal);
+        EditTask.appendChild(modal);
 
         const backdrop = modal.querySelector(".modal-overlay");
         const close = modal.querySelector(".modal-close");
         const button = modal.querySelector("#ButtonAddTask");
 
         backdrop.onclick = function (e) {
-            main.removeChild(modal);
+            EditTask.removeChild(modal);
         };
         close.onclick = function () {
-            main.removeChild(modal);
+            EditTask.removeChild(modal);
         };
         button.onclick = function () {
             let type = modal.querySelector(
                 'input[name="status"]:checked'
             ).value;
+            const category = EditTask.querySelector("#InputCategory");
+            const title = EditTask.querySelector("#InputTitle");
+            const description = EditTask.querySelector("#InputDescription");
 
+            if (
+                !category.value.length ||
+                !title.value.length ||
+                !description.value.length
+            ) {
+                checkInput(category, "category");
+                checkInput(title, "title");
+                checkInput(description, "description");
+                return;
+            }
             const editedTask = new Task(
-                modal.querySelector("#InputCategory").value,
-                modal.querySelector("#InputTitle").value,
-                modal.querySelector("#InputDescription").value,
+                category.value,
+                title.value,
+                description.value,
                 type
             );
             editActivity(id, editedTask);
