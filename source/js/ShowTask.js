@@ -1,6 +1,5 @@
-// import deleteTask from "./handleDeleteTask.js";
-import getActivities from "./api/getActivities.js";
-import deleteActivity from "./api/deleteActivity.js";
+import getActivities from "./api/Activity/getActivities.js";
+import deleteActivity from "./api/Activity/deleteActivity.js";
 import handleEditTask from "./handleEditTask.js";
 
 const $$ = document.querySelectorAll.bind(document);

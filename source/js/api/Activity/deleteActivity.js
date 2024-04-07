@@ -1,8 +1,8 @@
-import toast from "../toast.js";
-import showTask from "../ShowTask.js";
+import toast from "../../toast.js";
+import showTask from "../../ShowTask.js";
 export default async function deleteActivity(id) {
     try {
-        const response = await fetch("http://localhost:3000/Activities/" + id, {
+        const response = await fetch("https://my-json-server.typicode.com/phuocnguyen2412/ToDoApp/Activities/" + id, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

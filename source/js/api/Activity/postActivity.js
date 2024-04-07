@@ -1,15 +1,19 @@
-import toast from "../toast.js";
-
+import toast from "../../toast.js";
+import showTask from "../../ShowTask.js";
 export default async function postActivity(Activity) {
+    console.log(Activity);
     try {
-        const response = await fetch("http://localhost:3000/Activities", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(Activity),
-        });
-
+        const response = await fetch(
+            "https://my-json-server.typicode.com/phuocnguyen2412/ToDoApp/Activities",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(Activity),
+            }
+        );
+        console.log(response);
         if (!response.ok) {
             throw new Error("Network response was not ok");
         }

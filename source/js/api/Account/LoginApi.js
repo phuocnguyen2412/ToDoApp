@@ -1,4 +1,4 @@
-import toast from "../toast.js";
+import toast from "../../toast.js";
 export default async function LoginApi(account, url) {
     const button = document.querySelector("#ButtonLogin");
     button.innerHTML = `<div class="line-loading"></div>`;

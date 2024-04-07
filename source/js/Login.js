@@ -1,4 +1,6 @@
-import LoginApi from "./api/LoginApi.js";
+import LoginApi from "./api/Account/LoginApi.js";
+import register from "./api/Account/Register.js";
+import Register from "./api/Account/Register.js";
 const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
 
@@ -16,5 +18,11 @@ $("#ButtonLogin").addEventListener("click", function (e) {
         password: $("#password").value,
     };
     LoginApi(account, "https://recruitment-api.pyt1.stg.jmr.pl/login");
-    
+});
+$("#ButtonRegister").addEventListener("click", function (e) {
+    const account = {
+        email: $("#EmailRegister").value,
+        password: $("#PasswordRegister").value,
+    };
+    register(account);
 });

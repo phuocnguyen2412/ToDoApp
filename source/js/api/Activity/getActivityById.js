@@ -1,6 +1,9 @@
 export default async function getActivities(id) {
     try {
-        const response = await fetch("http://localhost:3000/Activities/" + id);
+        const response = await fetch(
+            "https://my-json-server.typicode.com/phuocnguyen2412/ToDoApp/Activities/" +
+                id
+        );
         const data = await response.json();
 
         return data;

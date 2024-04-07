@@ -1,5 +1,5 @@
-import getActivityById from "./api/getActivityById.js";
-import editActivity from "./api/editActivity.js";
+import getActivityById from "./api/Activity/getActivityById.js";
+import editActivity from "./api/Activity/editActivity.js";
 import Task from "./Task.js";
 import checkInput from "./checkInput.js";
 

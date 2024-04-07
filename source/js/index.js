@@ -1,10 +1,8 @@
 import closeModal from "./CloseModal.js";
 import handleAddNewTask from "./handleAddNewTask.js";
 import toast from "./toast.js";
-import Task from "./Task.js";
 import showTask from "./ShowTask.js";
-import getActivities from "./api/getActivities.js";
-import postActivity from "./api/postActivity.js";
+
 const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
 const Account = JSON.parse(localStorage.getItem("account"));

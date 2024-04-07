@@ -1,5 +1,5 @@
+import postActivity from "./api/Activity/postActivity.js";
 import Task from "./Task.js";
-import postActivity from "./api/postActivity.js";
 import checkInput from "./checkInput.js";
 
 export default function handleAddNewTask() {

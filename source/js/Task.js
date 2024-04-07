@@ -1,5 +1,5 @@
-import postActivity from "./api/postActivity.js";
-import deleteActivity from "./api/deleteActivity.js";
+import postActivity from "./api/Activity/postActivity.js";
+import deleteActivity from "./api/Activity/deleteActivity.js";
 
 export default function Task(category, title, description, type) {
     const id = localStorage.getItem("id") || "1";

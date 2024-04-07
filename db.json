@@ -1,12 +1,19 @@
 {
-  "Activities": [
-    {
-      "category": "1231231",
-      "title": "123123",
-      "description": "123123",
-      "type": "todo",
-      "time": " 20:53 6/4/2024",
-      "id": "1180"
-    }
-  ]
+    "Activities": [
+        {
+            "category": "1231231",
+            "title": "123123",
+            "description": "123123",
+            "type": "todo",
+            "time": " 20:53 6/4/2024",
+            "id": "1180"
+        }
+    ],
+    "Account": [
+        {
+            "email": "huynhphuocnguyen2412@gmail.com",
+            "password": "123",
+            "id": "6xnqm0A"
+        }
+    ]
 }
