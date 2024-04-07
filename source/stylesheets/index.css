@@ -121,6 +121,11 @@ main {
   justify-content: space-between;
 }
 
+#EditTask input[type=radio] {
+  width: 28px;
+  height: 16px;
+}
+
 .number {
   display: inline-block;
   padding: 4px 8px;

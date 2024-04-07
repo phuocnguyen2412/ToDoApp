@@ -115,6 +115,7 @@ export default async function showTask() {
             `;
         })
         .join("\n");
+
     $$(".fa-trash").forEach((item) => {
         item.addEventListener("click", (e) => {
             e.preventDefault();

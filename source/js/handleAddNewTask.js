@@ -55,12 +55,14 @@ export default function handleAddNewTask() {
             </div>
         </div>
     `;
+
     NewTask.querySelector(".modal-overlay").onclick = function () {
         NewTask.removeChild(NewTask.querySelector(".modal"));
     };
     NewTask.querySelector(".modal-close").onclick = function () {
         NewTask.removeChild(NewTask.querySelector(".modal"));
     };
+
     NewTask.querySelector("#ButtonAddTask").addEventListener(
         "click",
         function (e) {

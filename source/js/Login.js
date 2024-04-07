@@ -16,4 +16,5 @@ $("#ButtonLogin").addEventListener("click", function (e) {
         password: $("#password").value,
     };
     LoginApi(account, "https://recruitment-api.pyt1.stg.jmr.pl/login");
+    
 });

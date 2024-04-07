@@ -8,9 +8,7 @@ export default async function handleDeleteTask(id) {
     const EditTask = document.getElementById("EditTask");
 
     if (EditTask) {
-        const modal = document.createElement("div");
-
-        modal.innerHTML = `
+        EditTask.innerHTML = `
             <div class="modal edit-task-modal" style="display: flex;">
                 <div class="modal-overlay"></div>
                 <div class="modal-content">
@@ -58,22 +56,38 @@ export default async function handleDeleteTask(id) {
                             >${task.description}</textarea>
                             <div class="row" style="justify-content: space-around;">
                                 <div class="form-group">
-                                    <label for="TODO">TODO</label>
-                                    <input type="radio" id="TODO" name="status" value="todo" ${
-                                        task.type === "todo" ? "checked" : ""
-                                    }>
+                                    <div class="row"> 
+                                        <label for="TODO">TODO</label>
+                                        <input type="radio" id="TODO" name="status" value="todo" ${
+                                            task.type === "todo"
+                                                ? "checked"
+                                                : ""
+                                        }>
+                                    </div>
                                 </div>
                                 <div class="form-group">
+                                <div class="row"> 
                                     <label for="DOING">DOING</label>
                                     <input type="radio" id="DOING" name="status" value="doing" ${
                                         task.type === "doing" ? "checked" : ""
                                     }>
+                                    </div>
                                 </div>
                                 <div class="form-group">
+                                <div class="row"> 
                                     <label for="DONE">DONE</label>
                                     <input type="radio" id="DONE" name="status" value="done" ${
                                         task.type === "done" ? "checked" : ""
                                     }>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                <div class="row"> 
+                                    <label for="BLOCK">BLOCK</label>
+                                    <input type="radio" id="BLOCK" name="status" value="block" ${
+                                        task.type === "block" ? "checked" : ""
+                                    }>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -84,11 +98,10 @@ export default async function handleDeleteTask(id) {
                 </div>
             </div>
         `;
-        EditTask.appendChild(modal);
 
-        const backdrop = modal.querySelector(".modal-overlay");
-        const close = modal.querySelector(".modal-close");
-        const button = modal.querySelector("#ButtonAddTask");
+        const backdrop = EditTask.querySelector(".modal-overlay");
+        const close = EditTask.querySelector(".modal-close");
+        const button = EditTask.querySelector("#ButtonAddTask");
 
         backdrop.onclick = function (e) {
             EditTask.removeChild(modal);
@@ -97,7 +110,7 @@ export default async function handleDeleteTask(id) {
             EditTask.removeChild(modal);
         };
         button.onclick = function () {
-            let type = modal.querySelector(
+            let type = EditTask.querySelector(
                 'input[name="status"]:checked'
             ).value;
             const category = EditTask.querySelector("#InputCategory");
