@@ -2,12 +2,15 @@ import toast from "../../toast.js";
 import showTask from "../../ShowTask.js";
 export default async function deleteActivity(id) {
     try {
-        const response = await fetch("https://my-json-server.typicode.com/phuocnguyen2412/ToDoApp/Activities/" + id, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
+        const response = await fetch(
+            "/https://api.mockfly.dev/mocks/ToDoApp/Activities/" + id,
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
         const data = await response.json();
 
         toast({
