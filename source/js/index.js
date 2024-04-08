@@ -7,7 +7,7 @@ const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
 const Account = JSON.parse(localStorage.getItem("account"));
 
-if (!localStorage.getItem("isLoggedIn")) window.location.href = "./Login.html";
+if (!localStorage.getItem("isLoggedIn")) window.location.href = "./index.html";
 showTask();
 
 if (Account)

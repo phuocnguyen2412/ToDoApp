@@ -104,10 +104,10 @@ export default async function handleDeleteTask(id) {
         const button = EditTask.querySelector("#ButtonAddTask");
 
         backdrop.onclick = function (e) {
-            EditTask.removeChild(modal);
+            EditTask.removeChild(EditTask.querySelector(".modal"));
         };
         close.onclick = function () {
-            EditTask.removeChild(modal);
+            EditTask.removeChild(EditTask.querySelector(".modal"));
         };
         button.onclick = function () {
             let type = EditTask.querySelector(

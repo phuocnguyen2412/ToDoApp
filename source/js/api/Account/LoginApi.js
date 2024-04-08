@@ -21,7 +21,7 @@ export default async function LoginApi(account, url) {
             localStorage.setItem("account", JSON.stringify(account));
         }
         localStorage.setItem("isLoggedIn", "true");
-        window.location.href = "./index.html";
+        window.location.href = "./main.html";
     } catch (error) {
         console.log(error);
         toast({
