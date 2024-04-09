@@ -7,7 +7,7 @@ const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
 const Account = JSON.parse(localStorage.getItem("account"));
 
-if (!localStorage.getItem("isLoggedIn")) window.location.href = "./index.html";
+if (!localStorage.getItem("isLoggedIn")) window.location.href = "./login.html";
 showTask();
 
 if (Account)
@@ -39,7 +39,7 @@ $("#ButtonNewTask").addEventListener("click", handleAddNewTask);
 $("#ButtonLogout").addEventListener("click", function (e) {
     localStorage.removeItem("account");
     localStorage.removeItem("isLoggedIn");
-    window.location.href = "./Login.html";
+    window.location.href = "./login.html";
 });
 
 $$(".modal-close").forEach(function (item) {

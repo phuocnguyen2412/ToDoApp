@@ -102,12 +102,14 @@ export default async function handleEditTask(id) {
         const backdrop = EditTask.querySelector(".modal-overlay");
         const close = EditTask.querySelector(".modal-close");
         const button = EditTask.querySelector("#ButtonAddTask");
-
-        backdrop.onclick = function (e) {
+        function removeModal() {
             EditTask.removeChild(EditTask.querySelector(".modal"));
+        }
+        backdrop.onclick = function (e) {
+            removeModal();
         };
         close.onclick = function () {
-            EditTask.removeChild(EditTask.querySelector(".modal"));
+            removeModal();
         };
         button.onclick = async function () {
             let type = EditTask.querySelector(
@@ -133,7 +135,9 @@ export default async function handleEditTask(id) {
                 description.value,
                 type
             );
+            removeModal();
             await editActivity(id, editedTask);
+
             showTask();
         };
     }

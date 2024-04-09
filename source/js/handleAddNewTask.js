@@ -4,6 +4,10 @@ import checkInput from "./checkInput.js";
 
 export default function handleAddNewTask() {
     const NewTask = document.querySelector("#NewTask");
+    function removeModal() {
+        NewTask.removeChild(NewTask.querySelector(".modal"));
+    }
+
     NewTask.innerHTML = `
         <div class="modal">
             <div class="modal-overlay"></div>
@@ -57,10 +61,10 @@ export default function handleAddNewTask() {
     `;
 
     NewTask.querySelector(".modal-overlay").onclick = function () {
-        NewTask.removeChild(NewTask.querySelector(".modal"));
+        removeModal();
     };
     NewTask.querySelector(".modal-close").onclick = function () {
-        NewTask.removeChild(NewTask.querySelector(".modal"));
+        removeModal();
     };
 
     NewTask.querySelector("#ButtonAddTask").addEventListener(
@@ -87,6 +91,8 @@ export default function handleAddNewTask() {
                 description.value,
                 "todo"
             );
+            removeModal();
+            console.log(1);
             postActivity(task);
         }
     );
