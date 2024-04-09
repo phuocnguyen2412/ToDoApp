@@ -2,8 +2,8 @@ import getActivityById from "./api/Activity/getActivityById.js";
 import editActivity from "./api/Activity/editActivity.js";
 import Task from "./Task.js";
 import checkInput from "./checkInput.js";
-
-export default async function handleDeleteTask(id) {
+import showTask from "./ShowTask.js";
+export default async function handleEditTask(id) {
     const task = await getActivityById(id);
     const EditTask = document.getElementById("EditTask");
 
@@ -109,7 +109,7 @@ export default async function handleDeleteTask(id) {
         close.onclick = function () {
             EditTask.removeChild(EditTask.querySelector(".modal"));
         };
-        button.onclick = function () {
+        button.onclick = async function () {
             let type = EditTask.querySelector(
                 'input[name="status"]:checked'
             ).value;
@@ -133,7 +133,8 @@ export default async function handleDeleteTask(id) {
                 description.value,
                 type
             );
-            editActivity(id, editedTask);
+            await editActivity(id, editedTask);
+            showTask();
         };
     }
 }

@@ -1,6 +1,7 @@
 import getActivities from "./api/Activity/getActivities.js";
 import deleteActivity from "./api/Activity/deleteActivity.js";
 import handleEditTask from "./handleEditTask.js";
+import handleDragAndDrop from "./dragdrop.js";
 
 const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
@@ -21,7 +22,7 @@ export default async function showTask() {
     $(".todo-list").innerHTML = todo
         .map((item) => {
             return `
-                <div class="todo-item item" draggable="true">
+                <div id=${item.id} class="todo-item item" draggable="true">
                     <span class="category">${item.category}</span>
                     <h4 class="title">${item.title}</h4>
                     <div class="line-item"></div>
@@ -45,7 +46,7 @@ export default async function showTask() {
     $(".doing-list").innerHTML = doing
         .map((item) => {
             return `
-                <div class="todo-item item" draggable="true">
+                <div id=${item.id} class="todo-item item" draggable="true">
                     <span class="category">${item.category}</span>
                     <h4 class="title">${item.title}</h4>
                     <div class="line-item"></div>
@@ -69,7 +70,7 @@ export default async function showTask() {
     $(".block-list").innerHTML = block
         .map((item) => {
             return `
-                <div class="todo-item item" draggable="true">
+                <div id=${item.id} class="todo-item item" draggable="true">
                     <span class="category">${item.category}</span>
                     <h4 class="title">${item.title}</h4>
                     <div class="line-item"></div>
@@ -93,7 +94,7 @@ export default async function showTask() {
     $(".done-list").innerHTML = done
         .map((item) => {
             return `
-                <div class="todo-item item" draggable="true">
+                <div id=${item.id} class="todo-item item" draggable="true">
                     <span class="category">${item.category}</span>
                     <h4 class="title">${item.title}</h4>
                     <div class="line-item"></div>
@@ -127,4 +128,5 @@ export default async function showTask() {
             handleEditTask(item.getAttribute("value"));
         });
     });
+    handleDragAndDrop();
 }

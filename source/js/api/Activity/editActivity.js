@@ -4,7 +4,7 @@ import toast from "../../toast.js";
 export default async function editActivity(id, Activity) {
     try {
         const response = await fetch(
-            `https://my-json-server.typicode.com/phuocnguyen2412/ToDoApp/Activities/${id}`,
+            `https://66142e9f2fc47b4cf27bd108.mockapi.io/api/Activities/${id}`,
             {
                 method: "PUT",
                 headers: {
@@ -27,7 +27,7 @@ export default async function editActivity(id, Activity) {
             duration: 5000,
         });
 
-        showTask();
+        
     } catch (error) {
         console.error("There was an error!", error);
         toast({

@@ -2,7 +2,7 @@ import toast from "../../toast.js";
 export default async function register(account) {
     try {
         const response = await fetch(
-            "https://my-json-server.typicode.com/phuocnguyen2412/ToDoApp/Account/",
+            "https://66142e9f2fc47b4cf27bd108.mockapi.io/api/Account",
             {
                 method: "POST",
                 headers: {

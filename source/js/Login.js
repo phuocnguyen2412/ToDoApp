@@ -21,7 +21,7 @@ $("#ButtonLogin").addEventListener("click", function (e) {
 });
 $("#ButtonRegister").addEventListener("click", function (e) {
     const account = {
-        email: $("#EmailRegister").value,
+        login: $("#EmailRegister").value,
         password: $("#PasswordRegister").value,
     };
     register(account);
