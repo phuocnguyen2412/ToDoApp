@@ -1,5 +1,5 @@
-import editActivity from "./api/Activity/editActivity.js";
 import getActivityById from "./api/Activity/getActivityById.js";
+import editActivity from "./api/Activity/editActivity.js";
 
 export default async function handleDragAndDrop() {
     const lists = document.querySelectorAll(".list");
@@ -32,25 +32,23 @@ export default async function handleDragAndDrop() {
         } else editActivity(target.id, { ...task, type: "block" });
         target.style.border = "1px solid #ccc";
         target.style.backgroundColor = "#fff";
+        allElements.forEach((element) => {
+            element.removeEventListener("dragstart", handleDragStart);
+            element.removeEventListener("dragover", handleDragOver);
+            element.removeEventListener("drop", handleDrop);
+        });
     }
+    const allElements = document.querySelectorAll("*");
 
     items.forEach(function (item) {
-        // Loại bỏ trình nghe sự kiện dragstart cụ thể
         item.removeEventListener("dragstart", handleDragStart);
-
-        // Thêm trình nghe sự kiện dragstart mới
         item.addEventListener("dragstart", handleDragStart);
     });
 
     lists.forEach(function (list) {
-        // Loại bỏ trình nghe sự kiện dragover và drop cụ thể
         list.removeEventListener("dragover", handleDragOver);
         list.removeEventListener("drop", handleDrop);
-
-        // Thêm trình nghe sự kiện dragover mới
         list.addEventListener("dragover", handleDragOver);
-
-        // Thêm trình nghe sự kiện drop mới
         list.addEventListener("drop", handleDrop);
     });
 }

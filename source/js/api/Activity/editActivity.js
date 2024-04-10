@@ -26,8 +26,7 @@ export default async function editActivity(id, Activity) {
             type: "success",
             duration: 5000,
         });
-
-        
+        showTask();
     } catch (error) {
         console.error("There was an error!", error);
         toast({
