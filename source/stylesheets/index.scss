@@ -4,15 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 main {
-    padding: 40px 0;
-
-    overflow: hidden;
-    height: calc(100vh - 40px);
+    margin-top: 20px;
 }
-.body {
-    margin-bottom: 40px;
+.row {
+    padding: 6px 0;
+    align-items: center;
 }
 .l-3 {
     padding: 0 12px;
@@ -21,6 +20,12 @@ main {
     .row {
         justify-content: space-between;
     }
+}
+.list {
+    display: flex;
+    height: calc(100vh - 300px);
+    flex-direction: column;
+    overflow: auto;
 }
 #EditTask input[type="radio"] {
     width: 28px;
@@ -61,10 +66,6 @@ main {
     .line {
         background-color: #00afdd;
     }
-    .todo-list {
-        height: calc(100vh - 40px);
-        overflow: scroll;
-    }
 }
 #doing {
     .title-doing {
@@ -76,10 +77,6 @@ main {
     }
     .line {
         background-color: #e6d57d;
-    }
-    .doing-list {
-        height: calc(100vh - 40px);
-        overflow: scroll;
     }
 }
 #done {
@@ -93,10 +90,6 @@ main {
     .line {
         background-color: #45c761;
     }
-    .done-list {
-        height: calc(100vh - 40px);
-        overflow: scroll;
-    }
 }
 #block {
     .title-block {
@@ -109,14 +102,24 @@ main {
     .line {
         background-color: #e74b3c;
     }
-    .block-list {
-        height: calc(100vh - 40px);
-        overflow: scroll;
-    }
 }
 button {
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    background-color: #fff;
-    border: none;
-    padding: 12px 6px;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+    color: #fff;
 }

@@ -34,12 +34,26 @@
   top: 16px;
   right: 20px;
 }
+.item .fa-trash {
+  cursor: pointer;
+  font-size: 20px;
+}
+.item .fa-trash:hover {
+  color: red;
+}
+.item .fa-pen-to-square {
+  cursor: pointer;
+  font-size: 20px;
+}
+.item .fa-pen-to-square:hover {
+  color: burlywood;
+}
 
 .modal .modal-content h3 {
   text-align: center;
   margin-bottom: 20px;
 }
-.modal .modal-content input {
+.modal .modal-content input[type=text] {
   padding: 8px;
   width: 100%;
   margin-bottom: 12px;
@@ -101,16 +115,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 main {
-  padding: 40px 0;
-  overflow: hidden;
-  height: calc(100vh - 40px);
+  margin-top: 20px;
 }
 
-.body {
-  margin-bottom: 40px;
+.row {
+  padding: 6px 0;
+  align-items: center;
 }
 
 .l-3 {
@@ -119,6 +133,13 @@ main {
 
 .header .row {
   justify-content: space-between;
+}
+
+.list {
+  display: flex;
+  height: calc(100vh - 300px);
+  flex-direction: column;
+  overflow: auto;
 }
 
 #EditTask input[type=radio] {
@@ -159,10 +180,6 @@ main {
 #todo .line {
   background-color: #00afdd;
 }
-#todo .todo-list {
-  height: calc(100vh - 40px);
-  overflow: scroll;
-}
 
 #doing .title-doing {
   background-color: #e6d57d;
@@ -172,10 +189,6 @@ main {
 }
 #doing .line {
   background-color: #e6d57d;
-}
-#doing .doing-list {
-  height: calc(100vh - 40px);
-  overflow: scroll;
 }
 
 #done .title-done {
@@ -187,10 +200,6 @@ main {
 #done .line {
   background-color: #45c761;
 }
-#done .done-list {
-  height: calc(100vh - 40px);
-  overflow: scroll;
-}
 
 #block .title-block {
   background-color: #e74b3c;
@@ -201,14 +210,24 @@ main {
 #block .line {
   background-color: #e74b3c;
 }
-#block .block-list {
-  height: calc(100vh - 40px);
-  overflow: scroll;
-}
 
 button {
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
-  background-color: #fff;
-  border: none;
-  padding: 12px 6px;
+  border-radius: 25px;
+  transition-duration: 0.4s;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #2980b9;
+  color: #fff;
 }/*# sourceMappingURL=index.css.map */

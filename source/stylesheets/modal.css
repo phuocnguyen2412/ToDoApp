@@ -2,7 +2,7 @@
   text-align: center;
   margin-bottom: 20px;
 }
-.modal .modal-content input {
+.modal .modal-content input[type=text] {
   padding: 8px;
   width: 100%;
   margin-bottom: 12px;

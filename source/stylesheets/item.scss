@@ -33,4 +33,18 @@
         top: 16px;
         right: 20px;
     }
+    .fa-trash {
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .fa-trash:hover {
+        color: red;
+    }
+    .fa-pen-to-square {
+        cursor: pointer;
+        font-size: 20px;
+        &:hover {
+            color: burlywood;
+        }
+    }
 }

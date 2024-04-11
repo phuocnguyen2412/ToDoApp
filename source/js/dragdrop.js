@@ -29,10 +29,9 @@ export default async function handleDragAndDrop() {
             editActivity(target.id, { ...task, type: "doing" });
         } else if (this.classList.contains("done-list")) {
             editActivity(target.id, { ...task, type: "done" });
-            const audio = new Audio(
-                "https://github.com/phuocnguyen2412/ToDoApp/blob/main/source/audio/chipi%20chipi%20chapa%20chapa%20dubi%20dubi%20daba%20daba%20(looped).mp3"
-            );
+            const audio = new Audio("./source/audio/audio.mp3");
             audio.play();
+            setTimeout(() => audio.pause(), 8000);
         } else editActivity(target.id, { ...task, type: "block" });
         target.style.border = "1px solid #ccc";
         target.style.backgroundColor = "#fff";
