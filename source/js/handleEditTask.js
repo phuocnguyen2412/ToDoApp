@@ -4,9 +4,8 @@ import Task from "./Task.js";
 import checkInput from "./checkInput.js";
 import showTask from "./ShowTask.js";
 export default async function handleEditTask(id) {
-    const task = await getActivityById(id);
     const EditTask = document.getElementById("EditTask");
-
+    const task = await getActivityById(id);
     if (EditTask) {
         EditTask.innerHTML = `
             <div class="modal edit-task-modal" style="display: flex;">

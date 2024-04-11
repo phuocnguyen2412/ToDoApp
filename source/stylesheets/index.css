@@ -161,7 +161,7 @@ main {
 }
 #todo .todo-list {
   height: calc(100vh - 40px);
-  overflow: auto;
+  overflow: scroll;
 }
 
 #doing .title-doing {
@@ -175,7 +175,7 @@ main {
 }
 #doing .doing-list {
   height: calc(100vh - 40px);
-  overflow: auto;
+  overflow: scroll;
 }
 
 #done .title-done {
@@ -189,7 +189,7 @@ main {
 }
 #done .done-list {
   height: calc(100vh - 40px);
-  overflow: auto;
+  overflow: scroll;
 }
 
 #block .title-block {
@@ -203,7 +203,7 @@ main {
 }
 #block .block-list {
   height: calc(100vh - 40px);
-  overflow: auto;
+  overflow: scroll;
 }
 
 button {
