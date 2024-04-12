@@ -92,8 +92,10 @@ export default function handleAddNewTask() {
                 "todo"
             );
             removeModal();
-            console.log(1);
+
             postActivity(task);
+            const audio = new Audio("./source/audio/MeoBun.mp3");
+            audio.play();
         }
     );
 }

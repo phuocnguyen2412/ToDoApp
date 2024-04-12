@@ -27,6 +27,27 @@ export default async function editActivity(id, Activity) {
             duration: 5000,
         });
         showTask();
+        if (Activity.type === "todo") {
+            const audio = new Audio("./source/audio/MeoBun.mp3");
+            audio.play();
+            return;
+        }
+        if (Activity.type === "doing") {
+            const audio = new Audio("./source/audio/doing.mp3");
+            audio.play();
+            return;
+        }
+        if (Activity.type === "done") {
+            const audio = new Audio("./source/audio/audio.mp3");
+            audio.play();
+            setTimeout(() => audio.pause(), 28000);
+            return;
+        }
+        if (Activity.type === "block") {
+            const audio = new Audio("./source/audio/block.mp3");
+            audio.play();
+            return;
+        }
     } catch (error) {
         console.error("There was an error!", error);
         toast({
