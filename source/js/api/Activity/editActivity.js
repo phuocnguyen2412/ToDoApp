@@ -1,6 +1,38 @@
 import showTask from "../../ShowTask.js";
 import toast from "../../toast.js";
-
+const audioElements = [];
+function playMusic(Activity) {
+    let audio;
+    audioElements.forEach(function (audio) {
+        audio.pause();
+        audio.currentTime = 0; // Đặt thời gian của âm thanh về đầu
+    });
+    if (Activity.type === "todo") {
+        audio = new Audio("./source/audio/MeoBun.mp3");
+        audio.play();
+        audioElements.push(audio);
+        return;
+    }
+    if (Activity.type === "doing") {
+        audio = new Audio("./source/audio/doing.mp3");
+        audio.play();
+        audioElements.push(audio);
+        return;
+    }
+    if (Activity.type === "done") {
+        audio = new Audio("./source/audio/audio.mp3");
+        audio.play();
+        audioElements.push(audio);
+        setTimeout(() => audio.pause(), 28000);
+        return;
+    }
+    if (Activity.type === "block") {
+        audio = new Audio("./source/audio/block.mp3");
+        audio.play();
+        audioElements.push(audio);
+        return;
+    }
+}
 export default async function editActivity(id, Activity) {
     try {
         const response = await fetch(
@@ -27,27 +59,7 @@ export default async function editActivity(id, Activity) {
             duration: 5000,
         });
         showTask();
-        if (Activity.type === "todo") {
-            const audio = new Audio("./source/audio/MeoBun.mp3");
-            audio.play();
-            return;
-        }
-        if (Activity.type === "doing") {
-            const audio = new Audio("./source/audio/doing.mp3");
-            audio.play();
-            return;
-        }
-        if (Activity.type === "done") {
-            const audio = new Audio("./source/audio/audio.mp3");
-            audio.play();
-            setTimeout(() => audio.pause(), 28000);
-            return;
-        }
-        if (Activity.type === "block") {
-            const audio = new Audio("./source/audio/block.mp3");
-            audio.play();
-            return;
-        }
+        playMusic(Activity);
     } catch (error) {
         console.error("There was an error!", error);
         toast({

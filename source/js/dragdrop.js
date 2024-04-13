@@ -6,7 +6,7 @@ export default async function handleDragAndDrop() {
     const items = document.querySelectorAll(".item");
     let target;
     let task;
-    // Định nghĩa hàm xử lý sự kiện dragstart
+
     async function handleDragStart(e) {
         target = e.target;
         e.target.style.border = "1px solid #000";
@@ -14,12 +14,10 @@ export default async function handleDragAndDrop() {
         task = await getActivityById(target.id);
     }
 
-    // Định nghĩa hàm xử lý sự kiện dragover
     function handleDragOver(e) {
         e.preventDefault();
     }
 
-    // Định nghĩa hàm xử lý sự kiện drop
     function handleDrop(e) {
         e.preventDefault();
         this.appendChild(target);
@@ -32,7 +30,7 @@ export default async function handleDragAndDrop() {
         } else {
             editActivity(target.id, { ...task, type: "block" });
         }
-        target.style.border = "1px solid #ccc";
+
         target.style.backgroundColor = "#fff";
         allElements.forEach((element) => {
             element.removeEventListener("dragstart", handleDragStart);

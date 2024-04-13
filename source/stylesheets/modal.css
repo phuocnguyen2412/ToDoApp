@@ -1,19 +1,24 @@
 .modal .modal-content h3 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 30px;
 }
 .modal .modal-content input[type=text] {
-  padding: 8px;
+  padding: 10px;
   width: 100%;
   margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 20px;
 }
 .modal .modal-content button {
   padding: 8px;
   width: 100%;
 }
 .modal .modal-content textarea {
-  padding: 8px;
+  padding: 10px;
   width: 100%;
+  border-radius: 8px;
+  font-size: 20px;
 }
 
 .modal {

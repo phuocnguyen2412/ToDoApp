@@ -29,7 +29,7 @@ export default function handleAddNewTask() {
                 </span>
                 <div class="modal-main">
                     <div class="header">
-                        <h3>Add new todo</h3>
+                        <h3>ADD NEW TODO</h3>
                     </div>
                     <div class="body">
                         <input
@@ -59,7 +59,7 @@ export default function handleAddNewTask() {
             </div>
         </div>
     `;
-
+    document.querySelector("#InputCategory").focus();
     NewTask.querySelector(".modal-overlay").onclick = function () {
         removeModal();
     };

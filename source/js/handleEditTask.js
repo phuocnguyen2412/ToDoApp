@@ -117,7 +117,7 @@ export default async function handleEditTask(id) {
             const category = EditTask.querySelector("#InputCategory");
             const title = EditTask.querySelector("#InputTitle");
             const description = EditTask.querySelector("#InputDescription");
-
+          
             if (
                 !category.value.length ||
                 !title.value.length ||

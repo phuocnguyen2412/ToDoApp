@@ -14,7 +14,7 @@ function createHtml(parent, arr) {
                 <h4 class="title">${item.title}</h4>
                 <div class="line-item"></div>
                 <p class="content">
-                ${item.description}
+                    ${item.description}
                 </p>
                 <span class="time"
                     ><i class="fa-regular fa-clock"></i

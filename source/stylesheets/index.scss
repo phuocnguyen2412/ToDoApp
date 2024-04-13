@@ -5,16 +5,18 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    user-select: none;
 }
 main {
     margin-top: 20px;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 .row {
     padding: 6px 0;
     align-items: center;
 }
 .l-3 {
-    padding: 0 12px;
+    padding: 0 6px;
 }
 .header {
     .row {
